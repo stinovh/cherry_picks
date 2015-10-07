@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :companies
   get 'profile/update' => 'companies#edit'
   patch 'profile/update' => 'companies#update'
+  get 'profile' => 'companies#show'
 
   get 'pages/index'
   root 'pages#index'

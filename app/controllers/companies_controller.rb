@@ -1,5 +1,9 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_company!
+  def show
+    @company = current_company
+  end
+
   def edit
     @company = current_company
   end
