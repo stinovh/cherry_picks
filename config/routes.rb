@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :companies
-  get 'companies/new'
-
-  get 'companies/create'
+  get 'profile/update' => 'companies#edit'
+  patch 'profile/update' => 'companies#update'
 
   get 'pages/index'
   root 'pages#index'
