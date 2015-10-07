@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :companies
+  get 'profile/update' => 'companies#edit'
+  patch 'profile/update' => 'companies#update'
+  get 'profile' => 'companies#show'
+
+  get 'pages/index'
+  root 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
