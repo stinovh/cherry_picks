@@ -1,10 +1,23 @@
 Rails.application.routes.draw do
+  get 'profile/myproducts' => 'products#index'
+
+  get 'profile/myproducts/:product_id' => 'products#show'
+
+  get 'products/new' => 'products#new'
+
+  post 'products/new' => 'products#create'
+
+  get 'profile/myproducts/:product_id/edit' => 'products#edit'
+
+  patch 'profile/myproducts/:product_id/edit' => 'products#update'
+
+  delete 'products/remove' => 'products#destroy'
+
   devise_for :companies
   get 'profile/update' => 'companies#edit'
   patch 'profile/update' => 'companies#update'
   get 'profile' => 'companies#show'
 
-  get 'pages/index'
   root 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

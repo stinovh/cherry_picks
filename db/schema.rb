@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007090630) do
+ActiveRecord::Schema.define(version: 20151007143011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,4 +40,23 @@ ActiveRecord::Schema.define(version: 20151007090630) do
   add_index "companies", ["email"], name: "index_companies_on_email", unique: true, using: :btree
   add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true, using: :btree
 
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.date     "delivery_date"
+    t.decimal  "amount_funded"
+    t.integer  "amount_backers"
+    t.text     "description"
+    t.string   "campaign_platform"
+    t.integer  "company_id"
+    t.boolean  "approved",          default: false, null: false
+    t.string   "campaign_link"
+    t.boolean  "on_platform",       default: true,  null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  add_index "products", ["company_id"], name: "index_products_on_company_id", using: :btree
+
+  add_foreign_key "products", "companies"
 end
