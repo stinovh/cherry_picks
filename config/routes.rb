@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+
   get 'profile/myproducts' => 'products#index'
 
-  get 'profile/myproducts/:product_id' => 'products#show'
+  get 'products/:name' => 'products#show'
 
   get 'products/new' => 'products#new'
 

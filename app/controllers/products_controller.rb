@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find_by name: params[:name]
   end
 
   def new
