@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   get 'profile/myproducts' => 'products#index'
 
-  get 'products/:name' => 'products#show'
-
   get 'products/new' => 'products#new'
 
   post 'products/new' => 'products#create'
@@ -13,6 +11,8 @@ Rails.application.routes.draw do
   patch 'profile/myproducts/:product_id/edit' => 'products#update'
 
   delete 'products/remove' => 'products#destroy'
+
+  get 'products/:name' => 'products#show', as: "show_product"
 
   devise_for :companies
   get 'profile/update' => 'companies#edit'

@@ -16,6 +16,9 @@
               <th>
                 Amount funded
               </th>
+              <th>
+                Approval
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -25,6 +28,16 @@
                 <td>$<%= p.price %></td>
                 <td><%= p.delivery_date %></td>
                 <td>$<%= p.amount_funded %></td>
+                <td>
+                  <% if p.approved %>
+                    Approved
+                  <% else %>
+                    Pending approval
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "Show product page", show_product_path(p.name), class: "btn btn-primary" %>
+                </td>
               </tr>
             <% end %>
           </tbody>
