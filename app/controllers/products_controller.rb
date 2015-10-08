@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_company!, except: [:index]
+  before_action :authenticate_company!
   def index
     @products = current_company.products
   end
