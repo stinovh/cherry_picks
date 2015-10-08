@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_company!, except: [:index]
+  before_action :authenticate_company!
   def index
     @products = current_company.products
   end
 
   def show
+    @product = Product.find_by name: params[:name]
   end
 
   def new
