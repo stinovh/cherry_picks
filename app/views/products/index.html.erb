@@ -1,7 +1,8 @@
+<div class="container-fluid bg-colored">
 <div class="container">
   <div class="row">
-      <div class="col-xs-12 col-md-offset-2 col-md-8">
-        <table class="table table-hover table-striped table-responsive">
+      <div class="col-xs-12">
+        <table class="table table-responsive">
           <thead>
             <tr>
               <th>
@@ -36,7 +37,7 @@
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to "Show product page", show_product_path(p.name), class: "btn btn-primary" %>
+                  <%= link_to "Show product page", show_product_path(p.name), class: "btn own-btn" %>
                 </td>
               </tr>
             <% end %>
@@ -45,3 +46,4 @@
       </div>
     </div>
   </div>
+</div>

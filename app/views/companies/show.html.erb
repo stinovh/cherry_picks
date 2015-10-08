@@ -1,8 +1,21 @@
-Your company details
-<p>
-  <%= @company.email %>
-</p>
-<%= link_to "Edit your company", profile_update_path, class: "btn btn-danger" %>
-<%= link_to "See your products", profile_myproducts_path, class: "btn btn-primary" %>
-<%= link_to "Add a product", products_new_path, class: "btn btn-warning" %>
-
+<div class="container-fluid text-center  bg-colored">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h1><%= @company.name %></h1>
+      <hr>
+        <p><strong>E-mail:</strong> <%= @company.email %></p>
+        <p><strong>Address:</strong> <%= @company.street_name %><%= @company.house_number %></p>
+        <p><%= @company.city %> <%= @company.zipcode %></p>
+        <p><strong>Country:</strong> <%= @company.country %></p>
+         <%= link_to "Edit your company", profile_update_path, class: "btn own-btn" %>
+      <%= link_to "See your products", profile_myproducts_path, class: "btn own-btn" %>
+      <%= link_to "Add a product", products_new_path, class: "btn own-btn" %>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-xs-12">
+    </div>
+  </div>
+</div>
