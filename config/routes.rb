@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'searches/index' => 'searches#index'
+
+  get 'searches/new' => 'searches#new'
+
+  post 'searches' => 'searches#create'
+
+  get 'searches/:id' => 'searches#show', as: 'show_search'
+
   get 'profile/myproducts' => 'products#index'
 
   get 'products/new' => 'products#new'
