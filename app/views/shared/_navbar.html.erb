@@ -1,23 +1,31 @@
 <nav class="navbar navbar-default main-nav" id="own-nav">
+
   <div class="container-fluid main-nav-container">
-    <a class = "navbar-brand">CHERRYPICKS</a>
+    <a class = "navbar-brand"> <H3 class="title"><b> CHERRYPICKS </b></H3> </a>
+
     <button class = "navbar-toggle" data-toggle = "collapse" data-target = "#navHeaderCollapse">
       <span class = "icon-bar"></span>
       <span class = "icon-bar"></span>
       <span class = "icon-bar"></span>
     </button>
+
     <div class = "collapse navbar-collapse" id="navHeaderCollapse">
-      <ul class = "nav navbar-nav pull-right">
-       <li id="product-add"><%= link_to "Add your product",
+
+      <ul class = "nav navbar-nav pull-left">
+
+        <li><%= link_to "Explore", '/' %></li>
+        <li><%= link_to "How it works", '#' %></li>
+        <li><%= link_to "Add your product",
         if company_signed_in?
           '/'
         else
           new_company_session_path
         end
          %></li>
-        <li><%= link_to "Home", '/' %></li>
-        <li><%= link_to "About", '#' %></li>
-        <li><%= link_to "Contact Us", '#' %></li>
+
+      </ul>
+
+      <ul class = "nav navbar-nav pull-right">
         <% if company_signed_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_company.name%><span class="caret"></span></a>
@@ -35,6 +43,7 @@
           <li><%= link_to "Sign up", new_company_registration_path %></li>
         <% end %>
       </ul>
+
     </div>
   </div>
 </nav>
