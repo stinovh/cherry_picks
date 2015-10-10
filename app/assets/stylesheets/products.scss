@@ -11,9 +11,13 @@
 }
 
 .product-box {
-  background-color: yellow;
+  background-image: url('https://ksr-ugc.imgix.net/projects/2022453/photo-original.jpg?v=1444417958&w=1536&h=1152&fit=crop&auto=format&q=92&s=1a4b6d761a515a179ba62a1d92fe1607');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: black;
   height: 300px;
   border-style: solid;
   border-width: 5px;
   border-color: white;
+  color: white;
 }
