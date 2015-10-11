@@ -1,11 +1,17 @@
+<!-- Dynamicly generate background images -->
+<style>
+  .image-div { background-image: url('https://ksr-ugc.imgix.net/projects/2022453/photo-original.jpg?v=1444417958&w=1536&h=1152&fit=crop&auto=format&q=92&s=1a4b6d761a515a179ba62a1d92fe1607'); }
+</style>
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-md-3 text-center">
     <p> sadfasfasdfdasfd</p>
+
+<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
     </div>
     <div class="col-xs-12 col-md-9">
       <% @results.each do |product| %>
-        <div class="col-xs-12 col-sm-6 col-lg-4 product-box text-center">
+        <div class="col-xs-12 col-sm-6 col-lg-4 product-box text-center image-div">
           <%= product.name %>
           <%= product.price %>
         </div>
@@ -13,3 +19,4 @@
     </div>
   </div>
 </div>
+

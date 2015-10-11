@@ -52,3 +52,4 @@ gem 'simple_form'
 gem 'country_select'
 gem 'devise'
 gem "figaro"
+gem 'bootstrap-slider-rails'
