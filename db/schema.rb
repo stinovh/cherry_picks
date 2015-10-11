@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151009102026) do
+ActiveRecord::Schema.define(version: 20151011152359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,8 +70,11 @@ ActiveRecord::Schema.define(version: 20151009102026) do
     t.decimal  "amount_funded"
     t.string   "brand"
     t.string   "category"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.decimal  "price"
+    t.string   "campaign_platform"
+    t.date     "delivery_date"
   end
 
   add_foreign_key "products", "companies"

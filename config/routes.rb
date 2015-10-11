@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'searches/:id' => 'searches#show', as: 'show_search'
 
+  patch 'searches/:id' => 'searches#update'
+
   get 'profile/myproducts' => 'products#index'
 
   get 'products/new' => 'products#new'
