@@ -4,7 +4,8 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
-    @results = Product.search(@search)
+    @results = Product.search(@search, params[:test])
+    @categories = Category.all
   end
 
   def new
@@ -14,6 +15,12 @@ class SearchesController < ApplicationController
 
   def create
     @search = Search.create(search_params)
+    redirect_to show_search_path(@search)
+  end
+
+  def update
+    @search = Search.find(params[:id])
+    @search.update(search_params)
     redirect_to show_search_path(@search)
   end
 

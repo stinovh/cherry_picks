@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   belongs_to :company
   has_one :category
 
-  def self.search(query = {})
+  def self.search(query = {}, param)
     # where(:title, query) -> This would return an exact match of the query
     search_scope = self
     search_scope = where("products.amount_funded >= ?", "#{query.amount_funded}") if query.amount_funded.present?
