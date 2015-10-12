@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    params[:product][:delivery_date] = Date.strptime(params[:product][:delivery_date],"%Y/%m/%d") if params[:product][:delivery_date].present?
     @product = Product.create(product_params)
     redirect_to profile_myproducts_path
   end
