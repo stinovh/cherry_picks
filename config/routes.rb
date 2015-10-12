@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'searches/index' => 'searches#index'
 
   get 'searches/new' => 'searches#new'
