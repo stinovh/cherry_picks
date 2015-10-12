@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+
+  devise_for :users, controllers: { sessions: "users/sessions", confirmations: "users/confirmations", registrations: "users/registrations", passwords: "users/passwords", unlocks: "users/unlocks" }
   get 'searches/index' => 'searches#index'
 
   get 'searches/new' => 'searches#new'
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
 
   get 'products/:name' => 'products#show', as: "show_product"
 
-  devise_for :companies
+  devise_for :companies, controllers: { sessions: "companies/sessions", confirmations: "companies/confirmations", registrations: "companies/registrations", passwords: "companies/passwords", unlocks: "companies/unlocks" }
   get 'profile/update' => 'companies#edit'
   patch 'profile/update' => 'companies#update'
   get 'profile' => 'companies#show'

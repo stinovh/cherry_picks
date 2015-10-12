@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
-    @results = Product.search(@search, params[:test])
+    @results = Product.search(@search)
     @categories = [["All categories", nil]]
     Category.all.each do |category|
       @categories << [category.name, category.id]
