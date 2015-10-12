@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by name: params[:name]
+
+    redirect_to '/', alert: "No product found with name: #{params[:name]}" unless @product
   end
 
   def new
