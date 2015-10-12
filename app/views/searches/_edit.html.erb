@@ -1,7 +1,7 @@
 <%= simple_form_for @search, url: show_search_path, method: "patch" do |f| %>
   <div class="col-xs-12">
-  <%= f.input :price, collection: [["No minimum", nil],["< € 100", 100],["< € 250", 250],["< € 500", 500],["< € 1000", 1000]], prompt: "Select a amount", class: "form-control" %>
-  <%= f.input :amount_funded, collection: [["No minimum", 0],["> 10.000 euro", 10000],["> 100.000 euro", 100000],["> 1.000.000 euro", 1000000]], prompt: "Select a amount", class: "form-control", id: "price" %>
+  <%= f.input :price, collection: [["No minimum", nil],["< € 100", 100],["< € 250", 250],["< € 500", 500],["< € 1000", 1000]], selected: @search.price.to_i, prompt: "Select a amount", class: "form-control" %>
+  <%= f.input :amount_funded, collection: [["No minimum", 0],["> 10.000 euro", 10000],["> 100.000 euro", 100000],["> 1.000.000 euro", 1000000]], selected: @search.amount_funded.to_i, prompt: "Select a amount", class: "form-control", id: "price" %>
   </div>
   <div class="col-xs-12">
   <%= f.input :brand, class: "form-control", placeholder: "Product name" %>
@@ -11,7 +11,7 @@
   </div>
   <div class="col-xs-12">
   <%= f.label :delivery_date, "Max delivery date" %>
-  <%= f.date_field :delivery_date, class: "form-control" %>
+  <%= f.date_field :delivery_date, selected: @search.delivery_date, class: "form-control" %>
   </div>
   <div class="col-xs-12">
     <%= f.submit "Refine results", class: "btn btn-danger submit-search" %>
