@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
   def show
     @search = Search.find(params[:id])
     # redirect_to '/', alert: "No search found, please search again." unless @search
-    @results = Product.search(@search)
+    @results = Product.search(@search).order(price_cents: :desc)
     @categories = [["All categories", nil]]
     Category.all.each do |category|
       @categories << [category.name, category.id]

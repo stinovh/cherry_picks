@@ -10,7 +10,12 @@
         <h4>Total backers: <%= @product.amount_backers %></h4>
         <h4> Price: <%= humanized_money_with_symbol(@product.price) %></h4>
         <h4>Expected delivery: <%= @product.delivery_date %></h4>
-        <%= link_to "Order the product", '#',class: "btn btn-danger" %>
+        <%= simple_form_for @order, method: "post" do |f| %>
+          <%= f.hidden_field :product_id, value: @product.id %>
+          <%= f.hidden_field :amount_cents, value: @product.price_cents %>
+          <%= f.hidden_field :state, value: "pending" %>
+          <%= f.submit "Order the product", class: "btn btn-danger" %>
+        <% end %>
       </div>
   </div>
 </div>

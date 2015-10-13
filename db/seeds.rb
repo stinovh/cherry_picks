@@ -15,8 +15,8 @@
 # Category.create(name: "Comic")
 # Category.create(name: "Design")
 require 'date'
-
 Company.create(email: "test@email.com", password: "testtest", name: "testcompany")
+User.create(email: "user@email.com", password: "testtest")
 Category.create(name: "Technology")
 Category.create(name: "Music")
 Category.create(name: "Health")
@@ -31,3 +31,4 @@ Product.create(name: "Jaswig", price_cents: 39900, delivery_date: Date.new(2015,
 Product.create(name: "Travel Jacket", price_cents: 20000, delivery_date: Date.new(2015,12,20), amount_funded: 9192055, amount_backers: 44949, company_id: 1, description: "Great product", campaign_platform: "Kickstarter", campaign_link: "https://www.kickstarter.com/projects/597538543/the-worlds-best-travel-jacket-with-15-features-bau", category_id: 7)
 Product.create(name: "Ouya", price_cents: 22500, delivery_date: Date.new(2016,01,20), amount_funded: 8596474, amount_backers: 63416, company_id: 1, description: "Great product", campaign_platform: "Kickstarter", campaign_link: "https://www.kickstarter.com/projects/ouya/ouya-a-new-kind-of-video-game-console", category_id: 6)
 Product.create(name: "Zano", price_cents: 22500, delivery_date: Date.new(2016,02,20), amount_funded: 2335119, amount_backers: 12075, company_id: 1, description: "Great product", campaign_platform: "Kickstarter", campaign_link: "https://www.kickstarter.com/projects/torquing/zano-autonomous-intelligent-swarming-nano-drone", category_id: 1)
+Order.create(state: "pending", user_id: 1, product_id: 2, amount_cents: 39900)
