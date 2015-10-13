@@ -4,16 +4,14 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
+    # redirect_to '/', alert: "No search found, please search again." unless @search
     @results = Product.search(@search)
     @categories = [["All categories", nil]]
     Category.all.each do |category|
       @categories << [category.name, category.id]
     end
-  end
-
-  def new
-    @search = Search.new
-    @categories = Category.all
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path, alert: "No search found, please search again."
   end
 
   def create

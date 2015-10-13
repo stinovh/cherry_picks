@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions", confirmations: "users/confirmations", registrations: "users/registrations", passwords: "users/passwords", unlocks: "users/unlocks" }
   get 'searches/index' => 'searches#index'
 
-  get 'searches/new' => 'searches#new'
-
   post 'searches' => 'searches#create'
 
   get 'searches/:id' => 'searches#show', as: 'show_search'
