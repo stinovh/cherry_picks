@@ -12,6 +12,7 @@ padding-top: 200px;
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
+  z-index: 0;
 }
 
 .backgroundcolor {
@@ -25,6 +26,10 @@ padding-top: 200px;
   padding-top: 30px;
 }
 
+.first-field-search {
+  margin-left: 19%;
+}
+
 .submit-search {
   // background-color: #D2116C;
 }
@@ -35,6 +40,9 @@ padding-top: 200px;
   }
   .backgroundcolor {
     height: 646px;
+  }
+  .first-field-search {
+    margin-left: 0;
   }
 }
 

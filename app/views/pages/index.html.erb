@@ -6,23 +6,23 @@
       <h4>Among the startups who achieved a succesfull crowdfunded campaign,</h4>
       <h4>we pick the finest to offer our customers a selection the very best cherries </h4>
       <div class="container search-bar">
-    <div class="row">
-      <div class="col-xs-12 col-md-2 col-md-offset-2">
-        <%= simple_form_for @search do |f| %>
-        <%= f.input :amount_funded, label: false, placeholder: "Min funds raised", class: "form-control" %>
+        <div class="row">
+          <div class="col-xs-12 col-md-2 first-field-search">
+            <%= simple_form_for @search do |f| %>
+            <%= f.input :amount_funded, label: false, placeholder: "Min funds raised", class: "form-control" %>
+          </div>
+          <div class="col-xs-12 col-md-2">
+            <%= f.input :brand, label: false, class: "form-control", placeholder: "Product name" %>
+          </div>
+          <div class="col-xs-12 col-md-2">
+            <%= f.input :category, label: false, prompt: "Select a category", collection: @categories, class: "form-control" %>
+          </div>
+          <div class="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-0 text-center">
+            <%= f.submit "Search", class: "btn btn-danger submit-search" %>
+          </div>
+            <% end %>
         </div>
-        <div class="col-xs-12 col-md-2">
-        <%= f.input :brand, label: false, class: "form-control", placeholder: "Product name" %>
-        </div>
-        <div class="col-xs-12 col-md-2">
-        <%= f.input :category, label: false, prompt: "Select a category", collection: @categories, class: "form-control" %>
-        </div>
-        <div class="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-0 text-center">
-          <%= f.submit "Search", class: "btn btn-danger submit-search" %>
-        </div>
-        <% end %>
       </div>
-    </div>
     </div>
   </div>
 </div>
