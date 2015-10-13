@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_company!
+  before_action :authenticate_company!, except: [:show]
   def index
     @products = current_company.products
   end
 
   def show
     @product = Product.find_by name: params[:name]
-
+    @order = Order.new
     redirect_to '/', alert: "No product found with name: #{params[:name]}" unless @product
   end
 

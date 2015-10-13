@@ -54,3 +54,4 @@ gem 'country_select'
 gem 'devise'
 gem "figaro"
 gem 'bootstrap-slider-rails'
+gem 'money-rails'

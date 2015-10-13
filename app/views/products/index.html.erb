@@ -28,7 +28,7 @@
             <% @products.each do |p| %>
               <tr>
                 <td><%= p.name %></td>
-                <td>$<%= p.price %></td>
+                <td><%= humanized_money_with_symbol(p.price) %></td>
                 <td><%= p.delivery_date %></td>
                 <td>$<%= p.amount_funded %></td>
                 <td>

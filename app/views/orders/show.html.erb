@@ -1,0 +1,36 @@
+<div class="container bg-colored extra-top">
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12 table-responsive">
+      <h1 class="text-center">Your order details</h1>
+      <br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>
+                Product
+              </th>
+              <th>
+                Amount
+              </th>
+              <th>
+                Delivery date
+              </th>
+              <th>
+                State
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td><%= @order.product.name %></td>
+                <td><%= humanized_money_with_symbol(@order.amount) %></td>
+                <td><%= @order.product.delivery_date %></td>
+                <td><%= @order.state %></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
