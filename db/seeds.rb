@@ -16,7 +16,7 @@
 # Category.create(name: "Design")
 require 'date'
 Company.create(email: "test@email.com", password: "testtest", name: "testcompany")
-User.create(email: "user@email.com", password: "testtest")
+User.create(user_name: "stinovh", email: "user@email.com", password: "testtest")
 Category.create(name: "Technology")
 Category.create(name: "Music")
 Category.create(name: "Health")

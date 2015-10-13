@@ -1,2 +1,14 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container text-center bg-colored extra-top">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h1><%= @user.email %></h1>
+      <hr>
+        <p><strong>Name:</strong> <%= @user.last_name %> <%= @user.first_name %></p>
+        <p><strong>E-mail:</strong> <%= @user.email %></p>
+        <p><strong>Address:</strong> <%= @user.street_name %><%= @user.house_number %></p>
+        <p><%= @user.city %> <%= @user.zipcode %></p>
+        <p><strong>Country:</strong> <%= @user.country %></p>
+        <%= link_to "Edit your account", myprofile_update_path , class: "btn own-btn" %>
+    </div>
+  </div>
+</div>
