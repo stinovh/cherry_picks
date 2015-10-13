@@ -8,7 +8,7 @@
       <div class="col-xs-12 col-md-6 text-center bg-colored order-box">
         <h4>Total funded: $<%= @product.amount_funded %></h4>
         <h4>Total backers: <%= @product.amount_backers %></h4>
-        <h4> Price: $<%= @product.price %></h4>
+        <h4> Price: <%= humanized_money_with_symbol(@product.price) %></h4>
         <h4>Expected delivery: <%= @product.delivery_date %></h4>
         <%= link_to "Order the product", '#',class: "btn btn-danger" %>
       </div>
