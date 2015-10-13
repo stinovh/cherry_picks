@@ -27,6 +27,9 @@
                 <td><%= humanized_money_with_symbol(@order.amount) %></td>
                 <td><%= @order.product.delivery_date %></td>
                 <td><%= @order.state %></td>
+                <% if @order.state == "pending" %>
+                <td><%= link_to "To payment", new_order_payment_path(@order), class: "btn btn-danger" %></td>
+                <% end %>
               </tr>
           </tbody>
         </table>
