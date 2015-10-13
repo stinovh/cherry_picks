@@ -1,13 +1,13 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:show]
   def create
-    @user = current_user
-    @order = @user.orders.create(order_params)
+    @order = Order.create(order_params)
     redirect_to @order
   end
 
   def show
     @order = Order.find(params[:id])
+    @order.update(user: current_user)
     if(@order.user != current_user)
       redirect_to root_path
     end
