@@ -23,10 +23,69 @@ padding-top: 110px;
  height: 500px;
 }
 
-.carouselitem{
-
-  padding-top:50px;
+.productbox{
+  margin-top:30px;
+  // margin-right:5px;
+  // margin-left:5px;
+  margin-bottom:20px;
+  background-color: white;
+  border-style: solid;
+  border-color: rgb(222, 222, 222);
+  border-width: 2px;
 }
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+
+.productimage img {
+  object-fit: cover;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  height: 210px;
+}
+
+.productinfo {
+padding-left: 0px;
+padding-right: 0px;
+height: 110px;
+}
+
+.progress-bar {
+background-color: rgb(110, 200, 199);
+height: 5px;
+}
+
+.progress {
+height: 5px;
+margin-bottom: 5px;
+}
+
+.productboxpadding {
+ margin-left: 3px;
+ margin-right: 3px;
+ margin-top: -8px;
+
+}
+
+.kickstarterlogo{
+    height: 23px;
+    margin-left: -34px;
+    margin-top: 5px;
+}
+
+.indiegogologo{
+    height: 28px;
+    margin-left: -34px;
+    margin-top: 4px;
+
+}
+
+
+
 
 /* -------------------------------------
  * SASS code SPECIFIC TO your home page
