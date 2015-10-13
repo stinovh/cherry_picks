@@ -55,3 +55,4 @@ gem 'devise'
 gem "figaro"
 gem 'bootstrap-slider-rails'
 gem 'money-rails'
+gem 'stripe'

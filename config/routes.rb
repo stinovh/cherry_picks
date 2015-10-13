@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :orders, only: [:show, :create]
+  get 'payments/new'
 
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
 
   devise_for :users, controllers: { sessions: "users/sessions", confirmations: "users/confirmations", registrations: "users/registrations", passwords: "users/passwords", unlocks: "users/unlocks" }
   get 'searches/index' => 'searches#index'
