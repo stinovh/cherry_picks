@@ -1,2 +1,52 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container text-center extra-top">
+  <div class="row bg-colored ">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h1><%= @user.email %></h1>
+      <hr>
+        <p><strong>Name:</strong> <%= @user.last_name %> <%= @user.first_name %></p>
+        <p><strong>E-mail:</strong> <%= @user.email %></p>
+        <p><strong>Address:</strong> <%= @user.street_name %><%= @user.house_number %></p>
+        <p><%= @user.city %> <%= @user.zipcode %></p>
+        <p><strong>Country:</strong> <%= @user.country %></p>
+        <%= link_to "Edit your account", myprofile_update_path , class: "btn own-btn" %>
+    </div>
+  </div>
+
+  <div class="row top-buffer bg-colored">
+    <div class="col-xs-12 table-responsive">
+      <h1 class="text-center">Your order details</h1>
+      <br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>
+                Product
+              </th>
+              <th>
+                Amount
+              </th>
+              <th>
+                Delivery date
+              </th>
+              <th>
+                State
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+              <% @user.orders.each do |order| %>
+              <tr>
+                <td><%= order.product.name %></td>
+                <td><%= humanized_money_with_symbol(order.amount) %></td>
+                <td><%= order.product.delivery_date %></td>
+                <td><%= order.state %></td>
+                <% if order.state == "pending" %>
+                <td><%= link_to "To payment", new_order_payment_path(order), class: "btn btn-danger" %></td>
+                <% end %>
+              <% end %>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

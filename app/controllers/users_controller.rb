@@ -10,12 +10,12 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user.update(user_params)
-    redirect_to root_path
+    redirect_to myprofile_path
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :street_name, :house_number, :city, :zipcode, :country)
+    params.require(:user).permit(:username, :first_name, :last_name, :street_name, :house_number, :city, :zipcode, :country)
   end
 end

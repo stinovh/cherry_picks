@@ -15,11 +15,15 @@ Rails.application.routes.draw do
 
   patch 'searches/:id' => 'searches#update'
 
-  get 'profile/myproducts' => 'products#index'
-
   get 'products/new' => 'products#new'
 
   post 'products/new' => 'products#create'
+
+  get 'myprofile' => 'users#show'
+  get 'myprofile/update' => 'users#edit'
+  patch 'myprofile/update' => 'users#update'
+
+  get 'profile/myproducts' => 'products#index'
 
   get 'profile/myproducts/:product_id/edit' => 'products#edit'
 

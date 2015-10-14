@@ -1,7 +1,5 @@
 <!-- Dynamicly generate background images -->
-<style>
-  .image-div { background-image: url('https://ksr-ugc.imgix.net/projects/2022453/photo-original.jpg?v=1444417958&w=1536&h=1152&fit=crop&auto=format&q=92&s=1a4b6d761a515a179ba62a1d92fe1607'); }
-</style>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-md-3 text-center">
@@ -10,7 +8,10 @@
     <div class="col-xs-12 col-md-9">
       <% @results.each do |product| %>
         <%= link_to show_product_path(product.name) do %>
-        <div class="col-xs-12 col-sm-6 col-lg-4 product-box text-center image-div">
+        <style media="screen">
+          .image-<%= product.id %> { background-image: url("<%= raw product.picture_path %>"); }
+        </style>
+        <div class="col-xs-12 col-sm-6 col-lg-4 product-box text-center image-<%= product.id %>">
           <%= product.name %>
           <%= humanized_money_with_symbol(product.price) %>
         </div>

@@ -5,14 +5,16 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
+          <%= f.input :campaign_platform, collection: ['Kickstarter', 'Indiegogo', 'Kiss Kiss Bank Bank'], prompt: "Previous crowdfunding platform", autofocus: true %>
           <%= f.input :name, autofocus: true %>
           <%= f.input :description, autofocus: true %>
-          <%= f.input :category_id, collection: @categories, prompt: "Pick your product category", autofocus: true %>
           <%= f.input :price, autofocus: true %>
+          <%= f.input :category_id, collection: @categories, prompt: "Pick your product category", autofocus: true %>
           <%= f.input :delivery_date, autofocus: true %>
+        <div class="hidden-kick">
           <%= f.input :amount_funded, autofocus: true %>
           <%= f.input :amount_backers, autofocus: true %>
-          <%= f.input :campaign_platform, autofocus: true %>
+        </div>
           <%= f.hidden_field :company_id, value: current_company.id, autofocus: true %>
           <%= f.input :campaign_link, autofocus: true %>
         </div>
