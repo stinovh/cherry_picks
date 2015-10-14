@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class SearchesController < ApplicationController
   def index
   end
@@ -27,6 +29,15 @@ class SearchesController < ApplicationController
   end
 
   private
+
+  # def parse_json_kickstarter(product_name)
+  #   parse_name = product_name.split(" ").join("-")
+  #   api_url = "https://www.kickstarter.com/projects/search.json?search=&term=#{parse_name}"
+  #   open(api_url) do |stream|
+  #     product = JSON.parse(stream.read)
+  #     return product['projects'][0]['photo']['full']
+  #   end
+  # end
 
   def search_params
     params.require(:search).permit(:amount_funded, :brand, :category, :price, :delivery_date, :campaign_platform)
