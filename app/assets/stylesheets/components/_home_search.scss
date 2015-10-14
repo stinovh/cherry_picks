@@ -1,0 +1,46 @@
+.search-bar {
+ // add some css here to style the homepage searchbar
+  padding-top: 30px;
+  .form-control {
+    color: white !important;
+  }
+  #home-search {
+    bottom: 15px;
+  }
+}
+
+.first-field-search {
+  margin-left: 19%;
+}
+
+.submit-search {
+  // background-color: #D2116C;
+}
+
+#search_amount_funded::-webkit-input-placeholder {
+  color: white !important;
+  }
+#search_amount_funded:-moz-placeholder { /* Firefox 18- */
+  color: white !important;
+  }
+#search_amount_funded::-moz-placeholder {  /* Firefox 19+ */
+  color: white !important;
+  }
+
+#search_amount_funded:-ms-input-placeholder {
+  color: white !important;
+  }
+
+#search_brand::-webkit-input-placeholder {
+  color: white !important;
+  }
+#search_brand:-moz-placeholder { /* Firefox 18- */
+  color: white !important;
+  }
+#search_brand::-moz-placeholder {  /* Firefox 19+ */
+  color: white !important;
+  }
+
+#search_brand:-ms-input-placeholder {
+  color: white !important;
+  }

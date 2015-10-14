@@ -16,22 +16,9 @@ padding-top: 200px;
 }
 
 .backgroundcolor {
-  background-color: rgba(110, 200, 199, 0.7);
+  background-color: rgba(0,188,212,0.8);
   height: 500px;
   z-index: 2;
-}
-
-.search-bar {
- // add some css here to style the homepage searchbar
-  padding-top: 30px;
-}
-
-.first-field-search {
-  margin-left: 19%;
-}
-
-.submit-search {
-  // background-color: #D2116C;
 }
 
 @media (max-width: 991px) {

@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootstrap-slider
+//= require bootstrap-material-design
 //= require_tree .
 
