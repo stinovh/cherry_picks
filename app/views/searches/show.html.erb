@@ -8,7 +8,7 @@
         <% @results.each do |product| %>
           <div class="card-container">
             <%= link_to show_product_path(product.name) do %>
-              <div class="card">
+              <div class="card card-overview">
                 <div class="card-image">
                   <img class="img-responsive" src="<%= raw product.picture_path %>">
                 </div>

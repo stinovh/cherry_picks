@@ -13,6 +13,12 @@ class UsersController < ApplicationController
     redirect_to myprofile_path
   end
 
+  def update_before_order
+    @order =current_user.orders.last
+    @user = current_user.update(user_params)
+    redirect_to new_order_payment_path(@order)
+  end
+
   private
 
   def user_params

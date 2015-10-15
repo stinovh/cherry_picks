@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @user = current_user
     @order = Order.find(params[:id])
     @order.update(user: current_user)
     if(@order.user != current_user)

@@ -45,3 +45,25 @@
     margin-bottom: 20px;
   }
 }
+
+.order-panel {
+  .panel-heading {
+    background-color: #0097A7 !important;
+  }
+  .panel-title {
+    font-size: 2em;
+  }
+  span {
+    margin-left: auto;
+    font-size: 1.5em;
+  }
+  p {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.order-card-image {
+  padding: 0;
+  max-width: 100%;
+}
