@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'myprofile' => 'users#show'
   get 'myprofile/update' => 'users#edit'
   patch 'myprofile/update' => 'users#update'
-
+  patch 'user/update' => 'users#update_before_order'
   get 'profile/myproducts' => 'products#index'
 
   get 'profile/myproducts/:product_id/edit' => 'products#edit'

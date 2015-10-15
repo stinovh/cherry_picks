@@ -21,3 +21,53 @@
   color: white;
   font-size: 1.5em;
 }
+
+.video-box {
+  background-color: white;
+  padding: 0;
+  p {
+    padding: 30px;
+  }
+}
+
+.details-box {
+  padding-left: 60px;
+  h4 {
+    margin-bottom: -6px;
+    b {
+    font-size: 2em;
+    }
+  }
+  h1 {
+    padding-bottom: 20px;
+  }
+  h5 {
+    margin-bottom: 20px;
+  }
+}
+
+.order-panel.order-details {
+  margin-top: 25px;
+}
+
+.order-panel {
+  .panel-heading {
+    background-color: #0097A7 !important;
+  }
+  .panel-title {
+    font-size: 2em;
+  }
+  span {
+    margin-left: auto;
+    font-size: 1.5em;
+  }
+  p {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.order-card-image {
+  padding: 0;
+  max-width: 100%;
+}

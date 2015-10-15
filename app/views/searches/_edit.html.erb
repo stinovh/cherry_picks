@@ -13,7 +13,7 @@
   <%= f.label :delivery_date, "Max delivery date" %>
   <%= f.date_field :delivery_date, selected: @search.delivery_date, class: "form-control" %>
   </div>
-  <div class="col-xs-12">
-    <%= f.submit "Refine results", class: "btn btn-danger submit-search" %>
+  <div class="col-xs-12 refine-submit">
+    <%= f.submit "Refine results", class: "btn btn-material-pink" %>
   </div>
 <% end %>

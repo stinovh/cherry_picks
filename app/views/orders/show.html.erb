@@ -1,39 +1,60 @@
-<div class="container bg-colored extra-top">
 <div class="container">
   <div class="row">
-      <div class="col-xs-12 table-responsive">
-      <h1 class="text-center">Your order details</h1>
-      <br>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>
-                Product
-              </th>
-              <th>
-                Amount
-              </th>
-              <th>
-                Delivery date
-              </th>
-              <th>
-                State
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr>
-                <td><%= @order.product.name %></td>
-                <td><%= humanized_money_with_symbol(@order.amount) %></td>
-                <td><%= @order.product.delivery_date %></td>
-                <td><%= @order.state %></td>
-                <% if @order.state == "pending" %>
-                <td><%= link_to "To payment", new_order_payment_path(@order), class: "btn btn-danger" %></td>
-                <% end %>
-              </tr>
-          </tbody>
-        </table>
+    <div class="col-xs-12 col-md-offset-2 col-md-4">
+      <div class="panel panel-primary order-panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Account info</h3>
+        </div>
+        <div class="panel-body">
+          <%= simple_form_for @user, url: user_update_path, method: "patch" do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :first_name, autofocus: true %>
+              <%= f.input :last_name, autofocus: true %>
+              <%= f.input :street_name, autofocus: true %>
+              <%= f.input :house_number, autofocus: true %>
+              <%= f.input :city, autofocus: true %>
+              <%= f.input :zipcode, autofocus: true %>
+              <%= f.input :country, autofocus: true %>
+            </div>
+          <% if @order.state == "pending" %>
+            <div class="form-actions">
+              <%= f.button :submit, "Continue to payment", class: "btn btn-material-pink" %>
+            </div>
+          <% else %>
+            <%= link_to "Explore more cool products", root_path, class: "btn btn-material-pink" %>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="card-container order-card-image">
+        <div class="card">
+          <div class="card-image">
+            <img class="img-responsive" src="<%= raw @order.product.picture_path %>">
+          </div>
+          <div class="card-action">
+            <div class="card-action-name">
+              <%= @order.product.name %>
+            </div>
+            <div class="card-action-price">
+              <%= humanized_money_with_symbol(@order.amount) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary order-panel order-details">
+        <div class="panel-heading">
+          <h3 class="panel-title">Order details</h3>
+        </div>
+        <div class="panel-body">
+          <p>Product name:<span><b><%= @order.product.name %></b></span></p>
+          <p>Amount: <span><b><%= humanized_money_with_symbol(@order.amount) %></b></span></p>
+          <p>Delivery date: <span><b><%= @order.product.delivery_date %></b></span></p>
+        </div>
       </div>
     </div>
   </div>
 </div>
+

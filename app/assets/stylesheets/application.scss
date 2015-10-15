@@ -8,6 +8,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap-slider";
+@import "bootstrap-material-design";
 
 // Your CSS
 @import "layout/index";
@@ -18,3 +19,14 @@
 @import "products";
 @import "devise";
 @import "users";
+
+
+.dark-primary-color    { background: #0097A7 !important; }
+.default-primary-color { background: #00BCD4 !important; }
+.light-primary-color   { background: #B2EBF2; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FF4081; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+.color-white           { color: white !important; }
