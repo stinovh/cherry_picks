@@ -9,13 +9,13 @@
       </div>
       <div class="col-xs-12 col-md-6 details-box">
         <h1><%= @product.name %></h1>
-        <h4><b>€<%= @product.amount_funded.round()%></b></h4>
+        <h4><b>€<%= number_to_currency(@product.amount_funded, unit: "", precision:0)%></b></h4>
         <h5>amount of funding</h5>
         <h4><b><%= @product.amount_backers %></b></h4>
         <h5>backers</h5>
         <h4><b><%= humanized_money_with_symbol(@product.price) %></b></h4>
         <h5>price</h5>
-        <h4><b><%= @product.delivery_date %></b></h4>
+        <h4><b><%= @product.delivery_date.strftime("%d-%m-%Y") %></b></h4>
         <h5>expected delivery</h5>
         <%= simple_form_for @order, method: "post" do |f| %>
           <%= f.hidden_field :product_id, value: @product.id %>
