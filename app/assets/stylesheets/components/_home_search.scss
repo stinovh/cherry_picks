@@ -7,6 +7,32 @@
   #home-search {
     bottom: 15px;
   }
+  #search_amount_funded::-webkit-input-placeholder {
+    color: white !important;
+    }
+  #search_amount_funded:-moz-placeholder { /* Firefox 18- */
+    color: white !important;
+    }
+  #search_amount_funded::-moz-placeholder {  /* Firefox 19+ */
+    color: white !important;
+    }
+
+  #search_amount_funded:-ms-input-placeholder {
+    color: white !important;
+    }
+  #search_brand::-webkit-input-placeholder {
+    color: white !important;
+    }
+  #search_brand:-moz-placeholder { /* Firefox 18- */
+    color: white !important;
+    }
+  #search_brand::-moz-placeholder {  /* Firefox 19+ */
+    color: white !important;
+  }
+
+#search_brand:-ms-input-placeholder {
+  color: white !important;
+  }
 }
 
 .first-field-search {
@@ -16,35 +42,6 @@
 .submit-search {
   // background-color: #D2116C;
 }
-
-#search_amount_funded::-webkit-input-placeholder {
-  color: white !important;
-  }
-#search_amount_funded:-moz-placeholder { /* Firefox 18- */
-  color: white !important;
-  }
-#search_amount_funded::-moz-placeholder {  /* Firefox 19+ */
-  color: white !important;
-  }
-
-#search_amount_funded:-ms-input-placeholder {
-  color: white !important;
-  }
-
-#search_brand::-webkit-input-placeholder {
-  color: white !important;
-  }
-#search_brand:-moz-placeholder { /* Firefox 18- */
-  color: white !important;
-  }
-#search_brand::-moz-placeholder {  /* Firefox 19+ */
-  color: white !important;
-  }
-
-#search_brand:-ms-input-placeholder {
-  color: white !important;
-  }
-
 
 .color-search {
   background-color: rgba(1,1,1,0.1);
