@@ -1,15 +1,45 @@
-<h1>Purchase of <%= @order.product.name %></h1>
-<%= form_tag order_payments_path(@order) do %>
-  <article>
-    <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My <%= @order.product.name %>"
-    data-description="Order for <%= @order.user.email %>"
-    data-amount="<%= @order.amount_cents %>"
-    data-currency="EUR"></script>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <div class="panel panel-primary order-panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Account info</h3>
+        </div>
+        <div class="panel-body">
+          <%= simple_form_for @user, url: user_update_path, method: "patch" do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :first_name, autofocus: true, disabled:true %>
+              <%= f.input :last_name, autofocus: true, disabled:true %>
+              <%= f.input :street_name, autofocus: true, disabled:true %>
+              <%= f.input :house_number, autofocus: true, disabled:true %>
+              <%= f.input :city, autofocus: true, disabled:true %>
+              <%= f.input :zipcode, autofocus: true, disabled:true %>
+              <%= f.input :country, autofocus: true, disabled:true %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="panel panel-primary order-panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Payment info</h3>
+        </div>
+        <div class="panel-body">
+          <p>Product name:<span><b><%= @order.product.name %></b></span></p>
+          <p>Amount: <span><b><%= humanized_money_with_symbol(@order.amount) %></b></span></p>
+          <p>Delivery date: <span><b><%= @order.product.delivery_date %></b></span></p>
+          <%= form_tag order_payments_path(@order) do %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-name="My <%= @order.product.name %>"
+              data-description="Order for <%= @order.user.email %>"
+              data-amount="<%= @order.amount_cents %>"
+              data-currency="EUR"></script>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

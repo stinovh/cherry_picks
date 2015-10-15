@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   before_action :set_order
   def new
+    @user = current_user
   end
 
   def create
@@ -21,7 +22,7 @@ class PaymentsController < ApplicationController
 
     @order.update(payment: charge.to_json, state: 'paid')
 
-    redirect_to order_path(@order)
+    redirect_to order_path(@order), notice: "Payment succes!"
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

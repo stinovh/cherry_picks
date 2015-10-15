@@ -17,24 +17,18 @@
               <%= f.input :zipcode, autofocus: true %>
               <%= f.input :country, autofocus: true %>
             </div>
+          <% if @order.state == "pending" %>
             <div class="form-actions">
               <%= f.button :submit, "Continue to payment", class: "btn btn-material-pink" %>
             </div>
+          <% else %>
+            <%= link_to "Explore more cool products", root_path, class: "btn btn-material-pink" %>
+          <% end %>
           <% end %>
         </div>
       </div>
     </div>
     <div class="col-xs-12 col-md-4">
-      <div class="panel panel-primary order-panel">
-        <div class="panel-heading">
-          <h3 class="panel-title">Order details</h3>
-        </div>
-        <div class="panel-body">
-          <p>Product name:<span><b><%= @order.product.name %></b></span></p>
-          <p>Amount: <span><b><%= humanized_money_with_symbol(@order.amount) %></b></span></p>
-          <p>Delivery date: <span><b><%= @order.product.delivery_date %></b></span></p>
-        </div>
-      </div>
       <div class="card-container order-card-image">
         <div class="card">
           <div class="card-image">
@@ -48,6 +42,16 @@
               <%= humanized_money_with_symbol(@order.amount) %>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="panel panel-primary order-panel order-details">
+        <div class="panel-heading">
+          <h3 class="panel-title">Order details</h3>
+        </div>
+        <div class="panel-body">
+          <p>Product name:<span><b><%= @order.product.name %></b></span></p>
+          <p>Amount: <span><b><%= humanized_money_with_symbol(@order.amount) %></b></span></p>
+          <p>Delivery date: <span><b><%= @order.product.delivery_date %></b></span></p>
         </div>
       </div>
     </div>

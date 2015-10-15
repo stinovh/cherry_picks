@@ -15,8 +15,12 @@ class UsersController < ApplicationController
 
   def update_before_order
     @order =current_user.orders.last
-    @user = current_user.update(user_params)
-    redirect_to new_order_payment_path(@order)
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to new_order_payment_path(@order)
+    else
+      redirect_to order_path(@order), alert: "Could not save your details, please try again"
+    end
   end
 
   private
