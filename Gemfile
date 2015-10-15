@@ -51,6 +51,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'country_select'
+gem "autoprefixer-rails"
 gem 'devise'
 gem "figaro"
 gem 'bootstrap-slider-rails'

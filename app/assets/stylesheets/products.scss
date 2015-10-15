@@ -21,3 +21,27 @@
   color: white;
   font-size: 1.5em;
 }
+
+.video-box {
+  background-color: white;
+  padding: 0;
+  p {
+    padding: 30px;
+  }
+}
+
+.details-box {
+  padding-left: 60px;
+  h4 {
+    margin-bottom: -6px;
+    b {
+    font-size: 2em;
+    }
+  }
+  h1 {
+    padding-bottom: 20px;
+  }
+  h5 {
+    margin-bottom: 20px;
+  }
+}

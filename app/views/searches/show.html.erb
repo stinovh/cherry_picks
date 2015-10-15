@@ -1,23 +1,30 @@
-<!-- Dynamicly generate background images -->
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-md-3">
       <%= render 'searches/edit' %>
     </div>
     <div class="col-xs-12 col-md-9">
-      <% @results.each do |product| %>
-        <%= link_to show_product_path(product.name) do %>
-        <style media="screen">
-          .image-<%= product.id %> { background-image: url("<%= raw product.picture_path %>"); }
-        </style>
-        <div class="col-xs-12 col-sm-6 col-lg-4 product-box text-center image-<%= product.id %>">
-          <%= product.name %>
-          <%= humanized_money_with_symbol(product.price) %>
-        </div>
+      <div class="card-overlay">
+        <% @results.each do |product| %>
+          <div class="card-container">
+            <%= link_to show_product_path(product.name) do %>
+              <div class="card">
+                <div class="card-image">
+                  <img class="img-responsive" src="<%= raw product.picture_path %>">
+                </div>
+                <div class="card-action">
+                  <div class="card-action-name">
+                    <%= product.name %>
+                  </div>
+                  <div class="card-action-price">
+                    <%= humanized_money_with_symbol(product.price) %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
-
