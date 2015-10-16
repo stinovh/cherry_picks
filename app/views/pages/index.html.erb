@@ -1,10 +1,9 @@
 <div class=" backgroundimage ">
-  <div class="backgroundcolor  ">
+  <div class="backgroundcolor">
     <div class=" textlayout ">
-      <h1> <b>The Best of Crowdfunding </b></h1>
-      <br>
-      <h4>Among the startups who achieved a succesfull crowdfunded campaign,</h4>
-      <h4>we pick the finest to offer our customers a selection the very best cherries </h4>
+      <h1> <b>The top cherries of crowdfunding</b></h1>
+      <h4>Acquire the finest, most innovative products.
+            Be among the first ones to enjoy them. </h4>
       <div class="color-search">
       <div class="container search-bar">
         <div class="row">
@@ -28,3 +27,83 @@
     </div>
   </div>
 </div>
+<div class="container tabs-products">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-3">
+        <a data-toggle="tab" href="#first" class="active" id="first-one"><b>Most popular products</b></a>
+      </div>
+      <div class="col-xs-3">
+        <a data-toggle="tab" href="#second" id="second-one"><b>Technology</b></a>
+      </div>
+      <!-- <div class="col-xs-3">
+        <a data-toggle="tab" href="#third" id="third-one"><b>Trending</b></a>
+      </div> -->
+    </div>
+  </div>
+</div>
+<div class="tab-content">
+  <div id="first" class="tab-pane fade in active">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="card-overlay">
+            <% @results_popular.each do |product| %>
+              <div class="card-container-home">
+                <%= link_to show_product_path(product.name) do %>
+                  <div class="card card-overview">
+                    <div class="card-image">
+                      <img class="img-responsive" src="<%= raw product.picture_path %>">
+                    </div>
+                    <div class="card-action">
+                      <div class="card-action-name">
+                        <%= product.name %>
+                      </div>
+                      <div class="card-action-price">
+                        <%= humanized_money_with_symbol(product.price) %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="second" class="tab-pane fade">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="card-overlay">
+            <% @results_tech.each do |product| %>
+              <div class="card-container-home">
+                <%= link_to show_product_path(product.name) do %>
+                  <div class="card card-overview">
+                    <div class="card-image">
+                      <img class="img-responsive" src="<%= raw product.picture_path %>">
+                    </div>
+                    <div class="card-action">
+                      <div class="card-action-name">
+                        <%= product.name %>
+                      </div>
+                      <div class="card-action-price">
+                        <%= humanized_money_with_symbol(product.price) %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--   <div id="third" class="tab-pane fade">
+    <h3>Menu 2</h3>
+    <p>Some content in menu 2.</p>
+  </div>
+</div>
+ -->
