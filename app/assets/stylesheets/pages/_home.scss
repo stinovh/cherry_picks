@@ -1,23 +1,22 @@
 .textlayout {
 color: white;
 text-align: center;
-padding-top: 200px;
+padding-top: 100px;
 }
 
 .backgroundimage {
   position: relative;
-  top: -125px;
   background-image: url("http://i.imgur.com/P4Ztfyw.jpg?1");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 500px;
+  height: 400px;
   z-index: 0;
 }
 
 .backgroundcolor {
   background-color: rgba(0,188,212,0.8);
-  height: 500px;
+  height: 400px;
   z-index: 2;
 }
 
@@ -44,6 +43,16 @@ padding-top: 200px;
 
 .color-search {
   margin-top: 60px;
+}
+
+.tabs-products {
+  padding: 40px;
+  a {
+    color: black;
+    &.active {
+      color: #FF4081;
+    }
+  }
 }
 
 

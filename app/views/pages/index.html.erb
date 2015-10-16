@@ -1,5 +1,5 @@
 <div class=" backgroundimage ">
-  <div class="backgroundcolor  ">
+  <div class="backgroundcolor">
     <div class=" textlayout ">
       <h1> <b>The top cherries of crowdfunding</b></h1>
       <h4>Acquire the finest, most innovative products.
@@ -27,4 +27,82 @@
     </div>
   </div>
 </div>
-
+<div class="container tabs-products">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-3">
+        <a data-toggle="tab" href="#home" class="active"><b>Most popular products</b></a>
+      </div>
+      <div class="col-xs-3">
+        <a data-toggle="tab" href="#menu1"><b>Technology</b></a>
+      </div>
+      <div class="col-xs-3">
+        <a data-toggle="tab" href="#menu2"><b>Trending</b></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="card-overlay">
+            <% @results_popular.each do |product| %>
+              <div class="card-container">
+                <%= link_to show_product_path(product.name) do %>
+                  <div class="card card-overview">
+                    <div class="card-image">
+                      <img class="img-responsive" src="<%= raw product.picture_path %>">
+                    </div>
+                    <div class="card-action">
+                      <div class="card-action-name">
+                        <%= product.name %>
+                      </div>
+                      <div class="card-action-price">
+                        <%= humanized_money_with_symbol(product.price) %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="card-overlay">
+            <% @results_tech.each do |product| %>
+              <div class="card-container">
+                <%= link_to show_product_path(product.name) do %>
+                  <div class="card card-overview">
+                    <div class="card-image">
+                      <img class="img-responsive" src="<%= raw product.picture_path %>">
+                    </div>
+                    <div class="card-action">
+                      <div class="card-action-name">
+                        <%= product.name %>
+                      </div>
+                      <div class="card-action-price">
+                        <%= humanized_money_with_symbol(product.price) %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+    <h3>Menu 2</h3>
+    <p>Some content in menu 2.</p>
+  </div>
+</div>
