@@ -40,4 +40,12 @@ Product.create(name: " SNOOZ", price_cents: 7000, delivery_date: Date.new(2015,1
 Product.create(name: "Skreens", price_cents: 179000, delivery_date: Date.new(2015,10,11), amount_funded: 345187, amount_backers: 914, company_id: 1, description: "A revolutionary way to show all of your devices together on one display in 1080p/60 with no lag — just plug, play and play.", campaign_platform: "Kickstarter", campaign_link: "https://www.kickstarter.com/projects/1283573988/skreens-lets-every-device-stream-at-once-with-no-l ", category_id: 1, picture_path:"https://ksr-ugc.imgix.net/projects/1009028/photo-original.png?v=1444406231&w=560&h=420&fit=crop&auto=format&q=92&s=55b67f7be9f429edec48d9f3048d3e6d")
 
 
-Order.create(state: "pending", user_id: 1, product_id: 2, amount_cents: 39900)
+Order.create(state: "pending", user_id: 1, product_id: 1, amount_cents: 39900)
+Order.create(state: "pending", user_id: 1, product_id: 1, amount_cents: 39900)
+Order.create(state: "pending", user_id: 1, product_id: 4, amount_cents: 39900)
+Order.create(state: "pending", user_id: 1, product_id: 3, amount_cents: 39900)
+Order.create(state: "pending", user_id: 1, product_id: 3, amount_cents: 39900)
+Order.create(state: "pending", user_id: 1, product_id: 4, amount_cents: 39900)
+Order.create(state: "pending", user_id: 1, product_id: 4, amount_cents: 39900)
+
+
