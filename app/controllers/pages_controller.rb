@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   private
   def find_popular
     orders = Order.all.map{|x| x.product_id}
-    counted = Hash[orders.group_by {|x| x}.map {|k,v| [k,v.count]}].sort_by{|k, v| v}.reverse.first(4).map{|array| array[0]}
+    counted = Hash[orders.group_by {|x| x }.map {|k,v| [k,v.count]}].sort_by{|k, v| v}.reverse.first(4).map{|array| array[0]}
     Product.where(id: counted)
   end
 end
