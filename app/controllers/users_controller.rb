@@ -9,8 +9,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user.update(user_params)
-    redirect_to myprofile_path
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to myprofile_path, notice: "Updated your profile"
+    else
+      redirect_to myprofile_path, alert: "Could not save your details, please try again"
+    end
   end
 
   def update_before_order
