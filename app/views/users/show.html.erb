@@ -26,13 +26,13 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="row top-buffer bg-colored">
-    <div class="col-xs-12 table-responsive">
-      <h1 class="text-center">Your order details</h1>
-      <br>
-        <table class="table">
+    <div class="col-xs-12 col-md-8 table-responsive">
+      <div class="panel panel-primary order-panel account-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Your order history</h3>
+        </div>
+        <div class="panel-body">
+        <table class="table table-striped">
           <thead>
             <tr>
               <th>
@@ -52,17 +52,20 @@
           <tbody>
               <% @user.orders.each do |order| %>
               <tr>
-                <td><%= order.product.name %></td>
+                <td><p><%= order.product.name %></p></td>
                 <td><%= humanized_money_with_symbol(order.amount) %></td>
                 <td><%= order.product.delivery_date %></td>
                 <td><%= order.state %></td>
                 <% if order.state == "pending" %>
-                <td><%= link_to "To payment", new_order_payment_path(order), class: "btn btn-danger" %></td>
+                <td><%= link_to "To payment", new_order_payment_path(order), class: "btn btn-material-pink" %></td>
                 <% end %>
               <% end %>
               </tr>
           </tbody>
         </table>
       </div>
+      </div>
+      </div>
     </div>
+  </div>
 </div>
